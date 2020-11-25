@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["title"] = "Registrar Tareas";
+}
+@model Tarea
+<div class="container">
+    <form asp-action="SaveTarea" asp-controller="Tarea" method="post">
+        <div class="form-group col-md-6">
+            <label>Nombre de la Tarea</label>
+            <input asp-for="Nombre" class="form-control">
+            <span asp-validation-for="Nombre" class="badge bg-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Detalle de la tarea</label>
+            <input asp-for="Detalle" class="form-control">
+            <span asp-validation-for="Detalle" class="badge bg-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Fecha de Registro</label>
+            <input asp-for="fecharegistro" class="form-control">
+            <span asp-validation-for="fecharegistro" class="badge bg-danger"></span>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Prioridad</label>
+            <select asp-for="idPrioridad" class="form-control">
+                <option value="">Seleccionar</option>
+                @foreach (Prioridad p in ViewBag.Prioridad)
+                {
+                    <option value="@p.id">@p.descripcion</option>
+                }
+
+            </select>
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+
+</div>

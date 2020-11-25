@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewData["Title"] = "Listado de Tareas";
+}
+
+<h1>Listado de Tareas</h1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            @*<th scope="col">Id</th>*@
+            <th scope="col">Nombre</th>
+            <th scope="col">Detalle</th>
+            <th scope="col">Prioridad</th>
+            <th scope="col">Fecha de registro</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Tarea t in ViewBag.tareas)
+        {
+        <tr>
+            @*<th scope="row">@t.id</th>*@
+            <td>@t.Nombre</td>
+            <td>@t.Detalle</td>
+            <td>@t.Prioridad.descripcion</td>
+            <td>@t.fecharegistro</td>
+
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+
+<ul>
+   
+
+</ul>
+
+
